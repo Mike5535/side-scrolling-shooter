@@ -76,15 +76,22 @@ export class GameScene extends Phaser.Scene {
     if (enemy) {
       enemy.hits--
 
+      if(source?.texture.key === 'dragon') {
+        this.onComplete()
+        return
+      }
+
       if (!enemy.hits) {
         ++this.score
         this.scoreText.setText(`Score: ${this.score}`)
         Boom.generate(this, enemy.x, enemy.y)
         this.sounds.boom.play()
         source.destroy()
+        source.setAlive(false)
         target.setAlive(false)
       }
 
+      source.setAlive(false)
       source.destroy()
       return
     }
