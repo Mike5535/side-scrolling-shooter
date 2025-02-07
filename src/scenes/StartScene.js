@@ -28,7 +28,7 @@ export class StartScene extends Phaser.Scene {
     const textTitle = data.completed ? 'Level completed!' : 'Game Over'
     const textScore = `Score: ${data.score}`
     const textStyle = {
-      font: '40px CurseCasual',
+      font: '40px sans-serif',
       fill: '#FFFFFF',
     }
 
@@ -47,12 +47,12 @@ export class StartScene extends Phaser.Scene {
   createText() {
     this.add
       .text(gameConfig.width / 2, 500, 'Tap to start', {
-        font: '40px CurseCasual',
+        font: '40px sans-serif',
         fill: '#FFFFFF',
       })
       .setOrigin(0.5)
   }
-  
+
   setEvents() {
     this.input.on('pointerdown', () => {
       this.scene.start('Game')

@@ -1,6 +1,6 @@
-import { Enemies, Player } from "../gameObjects"
-import { Boom } from "../gameObjects/effects/Boom"
-import { gameConfig } from "../shared/config"
+import { Enemies, Player } from '../gameObjects'
+import { Boom } from '../gameObjects/effects/Boom'
+import { gameConfig } from '../shared/config'
 
 export class GameScene extends Phaser.Scene {
   constructor() {
@@ -34,17 +34,17 @@ export class GameScene extends Phaser.Scene {
   }
   createText() {
     this.healthText = this.add.text(50, 50, 'Health: ❤️❤️❤️', {
-      font: '40px CurseCasual',
+      font: '40px sans-serif',
       fill: '#FFFFFF',
     })
 
     this.scoreText = this.add.text(50, 100, 'Score: 0', {
-      font: '40px CurseCasual',
+      font: '40px sans-serif',
       fill: '#FFFFFF',
     })
 
     this.waveText = this.add.text(50, 150, 'Wave: 1', {
-      font: '40px CurseCasual',
+      font: '40px sans-serif',
       fill: '#FFFFFF',
     })
   }
@@ -73,7 +73,7 @@ export class GameScene extends Phaser.Scene {
   }
   onOverlap(source, target) {
     const enemy = [source, target].find((item) => item.texture.key === 'enemy')
-    if(enemy) {
+    if (enemy) {
       enemy.hits--
 
       if (!enemy.hits) {
@@ -86,12 +86,12 @@ export class GameScene extends Phaser.Scene {
       }
 
       source.destroy()
-      return;
+      return
     }
-    
+
     source.hits--
     this.healthText.setText(`Health: ${'❤️'.repeat(source.hits)}`)
-    if(!source.hits) {
+    if (!source.hits) {
       source.setAlive(false)
       target.setAlive(false)
     }
