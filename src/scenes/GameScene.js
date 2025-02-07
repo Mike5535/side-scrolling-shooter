@@ -86,9 +86,10 @@ export class GameScene extends Phaser.Scene {
         this.scoreText.setText(`Score: ${this.score}`)
         Boom.generate(this, enemy.x, enemy.y)
         this.sounds.boom.play()
-        source.destroy()
         source.setAlive(false)
+        source.destroy()
         target.setAlive(false)
+        return
       }
 
       source.setAlive(false)
