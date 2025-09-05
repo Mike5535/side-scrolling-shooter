@@ -1,2 +1,2 @@
 https://side-scrolling-shooter.netlif
-<img width="1253" height="668" alt="Снимок экрана 2025-09-05 в 17 58 59" src="https://github.com/user-attachments/assets/a53564a5-3fce-4396-8721-7aa2fd24f621" />
+<img width="1193" height="568" alt="Снимок экрана 2025-09-05 в 18 01 11" src="https://github.com/user-attachments/assets/76d9f44f-f989-444f-975f-1bb73dd908ec" />
